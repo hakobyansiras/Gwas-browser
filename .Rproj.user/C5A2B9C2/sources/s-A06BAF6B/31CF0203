@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1615536187456.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "31CF0203",
+    "lastKnownWriteTime" : 1615536533,
+    "last_content_update" : 1615536533400,
+    "path" : "~/Downloads/Shiny komp/Newapp/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "cursorPosition" : "5,2",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shiny)\nlibrary(googleVis)\nlibrary(DT)\nlibrary(data.table)\n\nshinyUI(\n  \n  fluidPage(theme = \"cerulean.css\",\n    \n    titlePanel (span(\"GWAS Catalog\", style = \"color:blue\")),\n    sidebarLayout(\n      sidebarPanel(\n        singleton(tags$head(HTML(\n          '\n    <script type=\"text/javascript\">\n    $(document).ready(function() {\n    $(\"#data_file\").attr(\"disabled\", \"true\").attr(\"onclick\", \"return false;\");\n    \n    Shiny.addCustomMessageHandler(\"download\", function(message) {\n    $(\"#data_file\").attr(\"disabled\", \"true\").attr(\"onclick\", \"return false;\").html(\n    \"<i class=\\\\\"fa fa-download\\\\\"></i> Download\");\n    });\n    Shiny.addCustomMessageHandler(\"download_ready\", function(message) {\n    $(\"#data_file\").removeAttr(\"disabled\").removeAttr(\"onclick\").html(\n    \"<i class=\\\\\"fa fa-download\\\\\"></i> Download search results\");\n    });\n    })\n    </script>\n    '\n        ))),\n        tags$head(tags$script('$(document).keyup(function(event){\n            if(event.keyCode == 13){\n                      $(\"#go\").click();\n            }\n        });\n        ')),\n        \n        textInput(\"a1\", label = h5(\"Please insert searching item\")\n        ),\n        actionButton(\"go\",label =  \"Search\",icon = icon(\"fa fa-search\")),\n        \n        downloadButton(\"data_file\")\n      ),\n      \n      mainPanel(\n        div(tabsetPanel(style='width: 700px',\n          tabPanel(title='Initial information', value=\"filetab\",textOutput(\"text\"),\n                   textOutput(\"text2\"),tags$head(tags$style(\"#text2{color: #FBB117;font-size: 20px;}\")),\n                   tags$head(tags$style(\"#text{color: #728C00;font-size: 20px;}\")),\n                   dataTableOutput(\"table2\"),\n                   htmlOutput(\"view\"),dataTableOutput(\"table1\")),\n          tabPanel(title=\"Genes and SNPs\", value=\"filetab\",textOutput(\"text1\"),\n                   div(dataTableOutput(\"table3\"), style = \"width: 700px\"),br(),\n                   div(dataTableOutput(\"table4\"), style = \"width: 700px\")),\n          tabPanel(title=\"Ontology annotations\",value = \"filetab\",textOutput(\"text3\"),dataTableOutput(\"table5\")),\n          tabPanel(title=\"Gwas table\", value=\"summarytab\",dataTableOutput(\"table\")),\n          id=\"tabs\"))\n      )\n    )\n  ))",
+    "created" : 1474556857554.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "121926794",
+    "id" : "83D4540D",
+    "lastKnownWriteTime" : 1468664116,
+    "last_content_update" : 1468664116,
+    "path" : "~/Downloads/Shiny komp/Newapp/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+name: Gwas
+account: programm
+server: shinyapps.io
+appId: 94090
+bundleId: 431822
+url: https://programm.shinyapps.io/Gwas/
+when: 1461504507.79908
+asMultiple: FALSE
+asStatic: FALSE
