@@ -261,6 +261,7 @@ shinyServer(function(input, output, session) {
   
   output$table5 <- DT::renderDataTable({
     DT::datatable(
+      selection = 'none',
       v$ontology_tab,escape=FALSE,
       filter = 'top',
       class = "cell-border",
@@ -277,6 +278,7 @@ shinyServer(function(input, output, session) {
   
   output$table3 <- DT::renderDataTable({
     DT::datatable(
+      selection = 'none',
       v$num_occurrence_g,escape=FALSE,
       filter = 'top',
       class = "cell-border",
@@ -292,6 +294,7 @@ shinyServer(function(input, output, session) {
   
   output$table4 <- DT::renderDataTable({
     DT::datatable(
+      selection = 'none',
       v$num_occurrence_s,escape=FALSE,
       filter = 'top',
       class = "cell-border",
@@ -307,6 +310,7 @@ shinyServer(function(input, output, session) {
   
   output$table2 <- DT::renderDataTable({
     DT::datatable(
+      selection = 'none',
       v$study,escape=FALSE,
       class = "cell-border",
       options = list(dom = 'frtp',pageLength = 10,
@@ -340,6 +344,7 @@ shinyServer(function(input, output, session) {
   
   output$table1 <- DT::renderDataTable({
     DT::datatable(
+      selection = 'none',
       v$data,escape=FALSE,
       class = "cell-border",
       options = list(dom = 'frtp',pageLength = 10,
@@ -355,6 +360,7 @@ shinyServer(function(input, output, session) {
   
   output$table <- DT::renderDataTable({
     DT::datatable(
+      selection = 'none',
       v$gwas_tab,escape=FALSE,
       filter = 'bottom',
       class = "cell-border",
@@ -364,7 +370,7 @@ shinyServer(function(input, output, session) {
                      initComplete = JS("function(settings, json) {",
                                        "$(this.api().table().header()).css({'background-color': '#3474B7', 'color': '#fff'});",
                                        "}"),
-                     scrollY = 480,scrollX = TRUE
+                     scrollY = 600,scrollX = TRUE
       ),
       style = 'bootstrap'
     )

@@ -7,9 +7,9 @@ shinyUI(
   
   fluidPage(theme = "cerulean.css",
     
-    titlePanel (span("GWAS Catalog", style = "color:blue")),
+    titlePanel (span("GWAS catalog browser", style = "color:blue"), windowTitle = "GWAS"),
     sidebarLayout(
-      sidebarPanel(
+      sidebarPanel(width = 3,
         singleton(tags$head(HTML(
           '
     <script type="text/javascript">
@@ -35,15 +35,15 @@ shinyUI(
         });
         ')),
         
-        textInput("a1", label = h5("Please insert searching item")
+        textInput("a1", label = h5("Please insert searching item"), placeholder = "Gene, SNP, disease"
         ),
-        actionButton("go",label =  "Search",icon = icon("fa fa-search")),
+        actionButton("go",label =  "Search",icon = icon("search", lib = "glyphicon")),
         
         downloadButton("data_file")
       ),
       
-      mainPanel(
-        div(style='width: 700px', tabsetPanel(
+      mainPanel(width = 9,
+        div(tabsetPanel(
           tabPanel(title='Initial information',textOutput("text"),
                    textOutput("text2"),tags$head(tags$style("#text2{color: #FBB117;font-size: 20px;}")),
                    tags$head(tags$style("#text{color: #728C00;font-size: 20px;}")),
